@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Context Manager - управление ставками</title>
+
+	<meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!--  Paper Dashboard core CSS    -->
+    <link href="css/paper-dashboard.css" rel="stylesheet"/>
+
+    <!--  Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+    <!--  Custom CSS     -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!--Sidebar-->
+    <div class="sidebar" data-background-color="white" data-active-color="danger">
+
+        <div class="sidebar-wrapper">
+            <div class="logo">
+            </div>
+
+            <ul class="nav">
+
+                <li class="dropdown open">
+                      <a href="#" class="dropdown-toggle">
+                        <b class="caret-right"></b>
+                        <p>Рекламные кампании</p>         
+                      </a>
+                      <ul class="dropdown-menu hidden">
+                        <a href="#"><li>Активные<span class="badge">15</span></li></a>
+                        <a href="#"><li>Остановленные<span class="badge">7</span></li></a>
+                        <a href="#"><li>Архивные<span class="badge">21</span></li></a>
+                        <a href="#"><li>Создать новую</li></a>
+                        <a href="#"><li>Редактировать</li></a>
+                        <a href="#"><li>Управление бюджетом</li></a>
+                        <a href="#"><li>Сводная статистика</li></a>
+                      </ul>
+                </li>
+
+                <li class="dropdown open">
+                      <a href="#" class="dropdown-toggle active">
+                        <b class="caret-right"></b>
+                        <p>Управление ставками</p>              
+                      </a>
+                      <ul class="dropdown-menu hidden">
+                        <a href="#"><li>Поисковые кампании</li></a>
+                        <a href="#"><li>Тематические площадки</li></a>
+                        <a href="#"><li>Создать формулу</li></a>
+                      </ul>
+                </li>
+
+                <li class="dropdown">
+                      <a href="#" class="dropdown-toggle">
+                        <b class="caret-right"></b>
+                        <p>Оптимизация</p>   
+                      </a>
+                      <ul class="dropdown-menu hidden">
+                        <a href="#"><li>Используемые цели</li></a>
+                        <a href="#"><li>Подменные номера</li></a>
+                        <a href="#"><li>Настройка</li></a>
+                      </ul>
+                </li>
+
+                <li class="dropdown">
+                      <a href="#" class="dropdown-toggle">
+                        <b class="caret-right"></b>
+                        <p>Обращения</p>
+                      </a>
+                      <ul class="dropdown-menu hidden">
+                        <a href="#"><li>Сводная статистика</li></a>
+                        <a href="#"><li>Качество обращений</li></a>
+                      </ul>
+                </li>
+
+                <li class="dropdown">
+                      <a href="#" class="dropdown-toggle">
+                        <b class="caret-right"></b>
+                        <p>Аналитика</p>
+                      </a>
+                      <ul class="dropdown-menu hidden">
+                        <a href="#"><li>Мои отчеты</li></a>
+                        <a href="#"><li>Настроить отчет</li></a>
+                        <a href="#"><li>Подключить CRM</li></a>
+                        <a href="#"><li>UTM-метки</li></a>
+                      </ul>
+                </li>
+
+                <li class="dropdown">
+                      <a href="#" class="dropdown-toggle">
+                        <b class="caret-right"></b>
+                        <p>Настройки</p>
+                      </a>
+                      <ul class="dropdown-menu hidden">
+                        <a href="#"><li>Мой профиль</li></a>
+                        <a href="#"><li>Финансы</li></a>
+                        <a href="#"><li>Доступ</li></a>
+                      </ul>
+                </li>
+
+                <li class="dropdown">
+                      <a href="#" class="dropdown-toggle">
+                        <b class="caret-right"></b>
+                        <p>Техническая поддержка</p>
+                      </a>
+                      <ul class="dropdown-menu hidden">
+                        <a href="#"><li>Отправить сообщение</li></a>
+                        <a href="#"><li>Вопросы и ответы</li></a>
+                        <a href="#"><li>Справка</li></a>
+                      </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+<!--Navbar-->
+    <nav class="navbar navbar-static-top navbar-ct-success">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
+                </button>
+                <div class="logo-wrapper">
+                    <img class="img-responsive" src="img/logo.png" alt="">
+                </div>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="search-wrapper">
+                        <input class="form-control" type="text" placeholder="Поиск">
+                        <button class="btn btn-default">Найти</button>
+                    </li>
+                    <div class="icon-menu-wrapper">
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-users"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-envelope-open"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-money"></i></a>
+                        </li>
+                    </div>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+<!--Main content-->
+    <div class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+
+            <!--Search Campaigns Block-->
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="card campaign-block">
+                            <div class="content table-responsive table-full-width">
+                                <h5>Управление ставками на поиске</h5>
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>1.</td>
+                                            <td class="campaign-name">Курсы макияжа - Поиск</td>
+                                            <td class="blind-text">Яндекс.Директ</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>2.</td>
+                                            <td>Курсы макияжа - Поиск + РСЯ</td>
+                                            <td class="blind-text">Яндекс.Директ</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>3.</td>
+                                            <td>Мобильные - Поиск</td>
+                                            <td class="blind-text">Google Adwords</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>4.</td>
+                                            <td>ВЧ запросы - Поиск</td>
+                                            <td class="blind-text">Яндекс.Директ</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>5.</td>
+                                            <td>Москва и МО - Поиск</td>
+                                            <td class="blind-text">Google Adwords</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>6.</td>
+                                            <td>Макияж для себя - Поиск</td>
+                                            <td class="blind-text">Google Adwords</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row selects-wrapper">
+                                <div class="form-group">
+                                    <select  class="form-control" name="search-bids-select" id="search-bids-select">
+                                        <option value="Ставки для всей кампании">Ставки для всей кампании</option>
+                                        <option value="Ставки для групп объявлений">Ставки для групп объявлений</option>
+                                        <option value="Ставки для ключевых фраз">Ставки для ключевых фраз</option>
+                                    </select>
+                                    <button class="btn btn-success">ОК</button>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="search-bids-action-select" id="search-bids-action-select">
+                                        <option value="Обновить">Обновить</option>
+                                        <option value="Включить">Включить</option>
+                                        <option value="Отключить">Отключить</option>
+                                        <option value="Удалить">Удалить</option>
+                                    </select>
+                                    <button class="btn btn-success">ОК</button>
+                                </div>
+                            </div>
+                        </div>
+
+                <!--Search Formula Block-->
+                        <div class="card formula-block">
+                            <div class="content">
+                                <div class="header-wrapper">
+                                    <h5>Создать формулу для поисковых кампаний</h5>
+                                </div>
+                                <div class="form-outer-wrapper">
+                                    <div class="form-wrapper">
+                                        <div class="form-group">
+                                            <span>Если </span>
+                                            <select class="form-control" name="search-formula-1-subject" id="search-formula-1-subject">
+                                                <option value="Цена входа">Цена входа</option>
+                                                <option value="Списываемая цена">Списываемая цена</option>
+                                                <option value="CTR">CTR</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control" name="search-formula-1-options" id="search-formula-1-options">
+                                                <option value="Цена входа">Выше</option>
+                                                <option value="Списываемая цена">Ниже</option>
+                                                <option value="CTR">Равно</option>
+                                            </select>
+                                            <input class="form-control" type="text" name="search-formula-1-user-bid" id="search-formula-1-user-bid">
+                                            <span>, то </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span>max ставка </span>
+                                            <input class="form-control" type="text" name="search-formula-1-max-bid" id="search-formula-1-max-bid">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-2x fa-plus"></i>
+                                    </div>
+                                    <div class="form-wrapper">
+                                        <div class="form-group">
+                                            <span>Если </span>
+                                            <select class="form-control" name="search-formula-2-subject" id="search-formula-2-subject">
+                                                <option value="Цена входа">Цена входа</option>
+                                                <option value="Списываемая цена">Списываемая цена</option>
+                                                <option value="CTR">CTR</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control" name="search-formula-2-options" id="search-formula-2-options">
+                                                <option value="Цена входа">Выше</option>
+                                                <option value="Списываемая цена">Ниже</option>
+                                                <option value="CTR">Равно</option>
+                                            </select>
+                                            <input class="form-control" type="text" name="search-formula-2-user-bid" id="search-formula-2-user-bid">
+                                            <span>, то </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span>max ставка </span>
+                                            <input class="form-control" type="text" name="search-formula-2-max-bid" id="search-formula-2-max-bid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button-wrapper">
+                                    <button class="btn btn-success" name="search-formula-submit" id="search-formula-submit">Отправить формулу на проверку
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                <!--Search Info Block-->
+                        <div class="card info-block">
+                            <div class="content">
+                                <ul>
+                                    <a href="#">
+                                        <li>Полезно знать про CTR в поиске Яндекса</li>
+                                    </a>
+                                    <a href="#">
+                                        <li>Какие факторы влияют на цену клика в поисковых кампаниях</li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+            <!--Theme Campaigns Block-->
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="card campaign-block">
+                            <div class="content table-responsive table-full-width">
+                                <h5>Ставки на тематических площадках</h5>
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>1.</td>
+                                            <td>Курсы макияжа - РСЯ</td>
+                                            <td class="blind-text">Яндекс.Директ</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>2.</td>
+                                            <td>Ретаргетинг</td>
+                                            <td class="blind-text">Яндекс.Директ</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>3.</td>
+                                            <td>Ремаркетинг</td>
+                                            <td class="blind-text">Google Adwords</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>4.</td>
+                                            <td>Аудитории (тел.)</td>
+                                            <td class="blind-text">Яндекс.Директ</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>5.</td>
+                                            <td>Gmail аудитории</td>
+                                            <td class="blind-text">Google Adwords</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="checkbox"><input type="checkbox"></div></td>
+                                            <td>6.</td>
+                                            <td>Курсы макияжа - КМС</td>
+                                            <td class="blind-text">Google Adwords</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row selects-wrapper">
+                                <div class="form-group">
+                                    <select class="form-control" name="theme-bids-select" id="theme-bids-select">
+                                        <option value="Ставки для всей кампании">Ставки для всей кампании</option>
+                                        <option value="Ставки для групп объявлений">Ставки для групп объявлений</option>
+                                        <option value="Ставки для ключевых фраз">Ставки для ключевых фраз</option>
+                                    </select>
+                                    <button class="btn btn-success">ОК</button>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="theme-bids-action-select" id="theme-bids-action-select">
+                                        <option value="Обновить">Обновить</option>
+                                        <option value="Включить">Включить</option>
+                                        <option value="Отключить">Отключить</option>
+                                        <option value="Удалить">Удалить</option>
+                                    </select>
+                                    <button class="btn btn-success">ОК</button>
+                                </div>
+                            </div>
+                        </div>
+
+                <!--Theme Formula Block-->
+                        <div class="card formula-block">
+                            <div class="content">
+                                <div class="header-wrapper">
+                                    <h5>Формула для тематических площадок</h5>
+                                </div>
+                                <div class="form-outer-wrapper">
+                                    <div class="form-wrapper">
+                                        <div class="form-group">
+                                            <span>Если </span>
+                                            <select class="form-control" name="theme-formula-1-subject" id="theme-formula-1-subject">
+                                                <option value="Цена входа">Цена входа</option>
+                                                <option value="Списываемая цена">Списываемая цена</option>
+                                                <option value="CTR">CTR</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control" name="theme-formula-1-options" id="theme-formula-1-options">
+                                                <option value="Цена входа">Выше</option>
+                                                <option value="Списываемая цена">Ниже</option>
+                                                <option value="CTR">Равно</option>
+                                            </select>
+                                            <input class="form-control" type="text" name="theme-formula-1-user-bid" id="theme-formula-1-user-bid">
+                                            <span>, то </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span>max ставка </span>
+                                            <input class="form-control" type="text" name="theme-formula-1-max-bid" id="theme-formula-1-max-bid">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-2x fa-plus"></i>
+                                    </div>
+                                    <div class="form-wrapper">
+                                        <div class="form-group">
+                                            <span>Если </span>
+                                            <select class="form-control" name="theme-formula-2-subject" id="theme-formula-2-subject">
+                                                <option value="Цена входа">Цена входа</option>
+                                                <option value="Списываемая цена">Списываемая цена</option>
+                                                <option value="CTR">CTR</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control" name="theme-formula-2-options" id="theme-formula-2-options">
+                                                <option value="Цена входа">Выше</option>
+                                                <option value="Списываемая цена">Ниже</option>
+                                                <option value="CTR">Равно</option>
+                                            </select>
+                                            <input class="form-control" type="text" name="theme-formula-2-user-bid" id="theme-formula-2-user-bid">
+                                            <span>, то </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span>max ставка </span>
+                                            <input class="form-control" type="text" name="theme-formula-2-max-bid" id="theme-formula-2-max-bid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button-wrapper">
+                                    <button class="btn btn-success" name="theme-formula-submit" id="theme-formula-submit">Отправить формулу на проверку
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                <!--Theme Info Block-->
+                        <div class="card info-block">
+                            <div class="content">
+                                <ul>
+                                    <a href="#"><li>От чего зависит цена клика на тематических площадках</li></a>
+                                    <a href="#"><li>Разница в ставках на РСЯ для текстовых и графических объявлений</li></a>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+    <!--   Core JS Files   -->
+    <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="js/bootstrap-checkbox-radio.js"></script>
+
+    <!-- Paper Dashboard Core javascript -->
+	<script src="js/paper-dashboard.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+
+
+</html>
